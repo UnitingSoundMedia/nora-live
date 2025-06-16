@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NORA Live</title>
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .welcome {
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #333;
+    }
+    audio {
+      margin-top: 20px;
+    }
+    .nora-buttons {
+      margin-top: 30px;
+    }
+    .nora-buttons button {
+      background-color: #ff7f50;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 12px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .nora-buttons button:hover {
+      background-color: #d85f30;
+    }
+    .nora-response {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Willkommen bei NORA</h1>
+  <img src="NORA_Avatar_2025_BusinessRealistic.png" alt="NORA Avatar" />
+  <div class="welcome">
+    <p>Hallo und herzlich willkommen! Ich bin NORA, deine digitale Assistentin mit Stil. Ich begleite dich durch deine Projekte und helfe dir, immer einen Schritt voraus zu sein.</p>
+    <p>(Falls du keinen Ton hörst: aktiviere bitte den Sound oder lies den Text hier.)</p>
+  </div>
+  <audio controls autoplay>
+    <source src="NORA_Voice_Intro_DE_Rachel_v1.mp3" type="audio/mpeg">
+    Dein Browser unterstützt das Audio-Element nicht.
+  </audio>
+
+  <div class="nora-buttons">
+    <button onclick="noraRespond('Hallo NORA')">Hallo NORA</button>
+    <button onclick="noraRespond('Was kannst du?')">Was kannst du?</button>
+    <button onclick="noraRespond('Erzähl mir mehr über dich')">Erzähl mir mehr über dich</button>
+  </div>
+
+  <div id="nora-response" class="nora-response"></div>
+
+  <script>
+  function noraRespond(message) {
+    let response = '';
+    if (message === 'Hallo NORA') {
+      response = 'Hallo! Schön, dass du da bist.';
+    } else if (message === 'Was kannst du?') {
+      response = 'Ich helfe dir bei deinen Projekten und beantworte deine Fragen!';
+    } else if (message === 'Erzähl mir mehr über dich') {
+      response = 'Ich bin NORA – deine digitale Assistentin mit Stil!';
+    } else {
+      response = 'Dazu habe ich gerade keine passende Antwort.';
+    }
+    document.getElementById('nora-response').innerText = response;
+  }
+  </script>
+</body>
+</html>
